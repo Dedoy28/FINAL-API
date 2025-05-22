@@ -2,7 +2,7 @@
 FROM maven:3.9.6-eclipse-temurin-21 as builder
 
 WORKDIR /app
-COPY . .
+COPY src .
 RUN chmod +x mvnw
 RUN ./mvnw clean install -DskipTests
 

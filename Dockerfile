@@ -1,12 +1,15 @@
-# Use Java 21-compatible Maven image
 FROM maven:3.9.6-eclipse-temurin-21 as builder
 
 WORKDIR /app
-COPY src .
+
+COPY mvnw .
+COPY .mvn .mvn
+COPY pom.xml .
+COPY src ./src
+
 RUN chmod +x mvnw
 RUN ./mvnw clean install -DskipTests
 
-# Use Java 21 JDK at runtime
 FROM eclipse-temurin:21-jdk-alpine
 
 WORKDIR /app

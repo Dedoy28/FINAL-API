@@ -9,7 +9,7 @@ import java.util.List;
 
 @CrossOrigin(origins = {
         "http://localhost:5173",
-        "https://final-ui-8ji0.onrender.com",
+        "https://final-ui-1ktx.onrender.com",
 })
 @RestController
 @RequestMapping("/api/posts")
